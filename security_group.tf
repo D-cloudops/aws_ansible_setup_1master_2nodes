@@ -32,7 +32,7 @@ resource "aws_vpc_security_group_ingress_rule" "ssh-cidr" {
   security_group_id = aws_security_group.node-vpc-sg.id
   cidr_ipv4 = "0.0.0.0/0"            
   for_each=tomap({
-    "TCP" = "22"
+    "tcp" = "22"
     "TCP" = "443"
 })
   from_port   = each.value
